@@ -39,15 +39,16 @@ public class Quiz {
 	}
 	
 	public static void main(String[] args) {
-		Question q = new Question("What number studio is this?", "8", 2);
+		
+		Question a = new Question("Who is the greatest singer of all time", "Kamijo", 50000);
+		Question b = new MultipleChoiceQuestion("Kamijo?", "2", 600000, new String[] {"no", "yes"});
 
-		String[] choices = {"seven", "nine", "eight", "six"};
-		Question multipleChoice = new MultipleChoiceQuestion("What studio is this?", "3", 1, choices);
+		
 
-		choices = new String[] {"instance variables", "git", "methods", "eclipse"};
-		Question selectAll = new SelectAllQuestion("Select all of the following that can be found within a class:", "13", choices);
+		
+		Question selectAll = new SelectAllQuestion("Select all of the following:", "12345678", new String[] {"Kamijo", "Kamijo", "Kamijo", "Kamijo", "Kamijo", "Kamijo", "Kamijo", "Kamijo"});
 
-		Question[] questions = {q, multipleChoice, selectAll}; //create and add more questions!
+		Question[] questions = {a, b, selectAll}; //create and add more questions!
 		
 		Quiz studio8quiz = new Quiz(questions);
 		studio8quiz.takeQuiz();
